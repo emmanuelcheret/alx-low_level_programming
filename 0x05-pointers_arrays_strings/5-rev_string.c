@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * rev_string - Reverses a string
  *
@@ -8,19 +10,16 @@
 
 void rev_string(char *s)
 {
-	int length = 0;
-	char temp;
-	int i; // Declare i outside of the loop
+	int len = 0, index = 0;
+	char tmp;
 
-	/* Find length of string */
-	while (s[length] != '\0')
-	length++;
+	while (s[index++])
+		len++;
 
-	/* Swap characters from both ends until middle is reached */
-	for (i = 0; i < length / 2; i++) // Move the loop declaration outside of the block
+	for (index = len - 1; index >= len / 2; index--)
 	{
-	temp = s[i];
-	s[i] = s[length - i - 1];
-	s[length - i - 1] = temp;
+		tmp = s[index];
+		s[index] = s[len - index - 1];
+		s[len - index - 1] = tmp;
 	}
 }
