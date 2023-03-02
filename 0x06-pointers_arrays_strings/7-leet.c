@@ -9,21 +9,23 @@
 char *leet(char *str)
 {
 	char *ptr = str;
-	char leet_chars[5] = {'4', '3', '0', '7', '1'};
-	char vowels[5] = {'a', 'e', 'o', 't', 'l'};
+	char leet_chars[] = {'4', '3', '0', '7', '1'};
+	char vowels[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
 	int i, j;
 
 	while (*ptr)
 	{
 		i = 0;
-		while (i < 5)
+		j = 0;
+		while (j < 10)
 		{
-			if (*ptr == vowels[i] || *ptr == vowels[i] - 32)
+			if (*ptr == vowels[j])
 			{
-				*ptr = leet_chars[i];
+				*ptr = leet_chars[i / 2];
 				break;
 			}
 			i++;
+			j++;
 		}
 		ptr++;
 	}
