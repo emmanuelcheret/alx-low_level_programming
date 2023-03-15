@@ -1,9 +1,11 @@
 #include <stdio.h>
 
-/*
- * main - function that prints its name
+/**
+ * main - Entry point
+ * @argc: The number of command- line arguments
+ * @argv: An array containing the command-line arguments
  *
- * Return: 0 on success
+ * Return: Always 0
  */
 
 int main(int argc, char *argv[])
